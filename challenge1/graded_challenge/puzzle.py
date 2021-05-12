@@ -4,15 +4,16 @@
 def to_sum(nums,n):
     for num in nums:
         if str(2020-int(num)-int(n)) in nums:
-            return int(num) * (2020-int(num)-int(n))
+            return [int(num), (2020-int(num)-int(n))]
 
 """find 3 numbers sum to 2020 and return their multiplication"""
 def three_sum(nums):
     for num1 in nums:
         temp = nums
         temp.remove(num1)
-        if to_sum(temp,num1):
-            return to_sum(temp,num1)*int(num1)
+        for num2 in temp:
+            if str(2020-int(num1)-int(num2)) in temp:
+                return [int(num1), int(num2), (2020-int(num1)-int(num2))]
 
 
 if __name__ == "__main__":
@@ -21,7 +22,11 @@ if __name__ == "__main__":
         nums = numfile.read().splitlines()
 
         result = to_sum(nums,"0")
-        print("The 1st puzzle answer is", result)
+        print("\nThe 1st puzzle answer\n")
+        print("The numbers are",result[0],result[1])
+        print("Final answer is",result[0]*result[1])
 
         result = three_sum(nums)
-        print("The 2nd puzzle answer is", result)
+        print("\nThe 2nd puzzle answer\n")
+        print("The numbers are",result[0],result[1],result[2])
+        print("Final answer is",result[0]*result[1]*result[2])
