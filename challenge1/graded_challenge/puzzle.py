@@ -1,10 +1,10 @@
 #! usr/bin/env python3
 
 """find 2 numbers sum to 2020 and return their multiplication """
-def to_sum(nums,n):
+def to_sum(nums):
     for num in nums:
-        if str(2020-int(num)-int(n)) in nums:
-            return [int(num), (2020-int(num)-int(n))]
+        if str(2020-int(num)) in nums:
+            return [int(num), (2020-int(num))]
 
 """find 3 numbers sum to 2020 and return their multiplication"""
 def three_sum(nums):
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     with open("puzzle1.txt","r") as numfile:
         nums = numfile.read().splitlines()
 
-        result = to_sum(nums,"0")
+        result = to_sum(nums)
         print("\nThe 1st puzzle answer\n")
         print("The numbers are",result[0],result[1])
         print("Final answer is",result[0]*result[1])
