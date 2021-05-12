@@ -23,10 +23,10 @@ if __name__ == "__main__":
 
         result = to_sum(nums)
         print("\nThe 1st puzzle answer\n")
-        print("The numbers are",result[0],result[1])
+        print("The numbers are",result)
         print("Final answer is",result[0]*result[1])
 
         result = three_sum(nums)
         print("\nThe 2nd puzzle answer\n")
-        print("The numbers are",result[0],result[1],result[2])
+        print("The numbers are",result)
         print("Final answer is",result[0]*result[1]*result[2])
