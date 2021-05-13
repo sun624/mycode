@@ -18,8 +18,7 @@ def three_sum(nums):
                 return [int(num1), int(num2), (SUM-int(num1)-int(num2))]
 
 
-if __name__ == "__main__":
-    
+def main():
     with open("puzzle1.txt","r") as numfile:
         nums = numfile.read().splitlines()
 
@@ -33,3 +32,7 @@ if __name__ == "__main__":
         print("\nThe 2nd puzzle answer\n")
         print("The numbers are",result)
         print("Final answer is",result[0]*result[1]*result[2])
+
+if __name__ == "__main__":
+    main()
+
